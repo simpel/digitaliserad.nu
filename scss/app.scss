@@ -1,0 +1,117 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+
+
+body {
+	background: #FFF;
+}
+
+.button {
+		
+		font-family: $header-font-family;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+h6 {
+	text-transform: uppercase;
+	font-weight: normal;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 0.6rem;
+	color: $dark-gray;
+}
+
+section {
+	padding: 2em 0;
+}
+
+.hero {
+	background: $secondary-color;
+
+	.logo {
+		margin-bottom: 3rem;
+	}
+
+	h1 {
+		border-bottom: 1px dotted #000;
+		margin-bottom: 2rem;
+	}
+}
+
+.plays {
+	background: $primary-color;
+	color: $white;
+
+	.two_columns {
+		-webkit-columns: 2; /* Chrome, Safari, Opera */
+	    -moz-columns: 2; /* Firefox */
+	    columns: 2;
+	}
+
+	li {
+		font-size: $lead-font-size;
+	}
+
+	a {
+		color: $white;
+	}
+}
+
+.tools {
+	background: $primary-color;
+}
+
+.footer {
+	background: $dark-gray;
+	color: $medium-gray;
+
+	a {
+		color: $light-gray;
+	}
+}
+
