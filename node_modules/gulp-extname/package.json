@@ -1,0 +1,77 @@
+{
+  "name": "gulp-extname",
+  "description": "gulp plugin to dynamically rewrite dest extensions based on src extensions.",
+  "version": "0.2.0",
+  "homepage": "https://github.com/jonschlinkert/gulp-extname",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/gulp-extname.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/gulp-extname/issues"
+  },
+  "licenses": {
+    "type": "MIT",
+    "url": "https://github.com/jonschlinkert/gulp-extname/blob/master/LICENSE-MIT"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "dependencies": {
+    "rewrite-ext": "^0.1.0",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "gulp-util": "^3.0.1",
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "dest",
+    "ext",
+    "extension",
+    "extensions",
+    "extname",
+    "file",
+    "filename",
+    "filepath",
+    "fp",
+    "fs",
+    "gulpfriendly",
+    "map",
+    "name",
+    "path",
+    "rename",
+    "rewrite",
+    "src"
+  ],
+  "_id": "gulp-extname@0.2.0",
+  "_shasum": "3ee72889bf55dff64bacca456b0449aa096aeb27",
+  "_from": "gulp-extname@>=0.2.0 <0.3.0",
+  "_npmVersion": "1.4.9",
+  "_npmUser": {
+    "name": "jonschlinkert",
+    "email": "github@sellside.com"
+  },
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "dist": {
+    "shasum": "3ee72889bf55dff64bacca456b0449aa096aeb27",
+    "tarball": "http://registry.npmjs.org/gulp-extname/-/gulp-extname-0.2.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/gulp-extname/-/gulp-extname-0.2.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
