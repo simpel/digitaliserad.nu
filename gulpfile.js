@@ -20,6 +20,7 @@ var COMPATIBILITY = ['last 2 versions', 'ie >= 9'];
 var PATHS = {
   assets: [
     'src/assets/**/*',
+    'src/assets/data',
     '!src/assets/{!img,js,scss}/**/*'
   ],
   sass: [
@@ -27,10 +28,11 @@ var PATHS = {
     'bower_components/motion-ui/src/'
   ],
   javascript: [
-    'bower_components/jquery/dist/jquery.js',
-    'bower_components/what-input/what-input.js',
+    'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/what-input/what-input.min.js',
     'bower_components/foundation-sites/dist/foundation.min.js',
-    'src/assets/js/**/*.js',
+    'src/assets/js/hightlight/jquery.highlight.js',
+    'src/assets/js/dictIt/dictIt.js',
     'src/assets/js/app.js'
   ]
 };

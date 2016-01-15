@@ -166,4 +166,16 @@ section {
     a {
         color: $white;
     }
+
+    .lowkey {
+        font-size: 0.7rem;
+        color: $medium-gray;
+    }
+
+}
+
+.highlight {
+    border-bottom: 1px dotted $body-font-color;
+    display: inline-block;
+    cursor: help;
 }
