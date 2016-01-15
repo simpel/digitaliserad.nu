@@ -1,10 +1,10 @@
 {
-  "name": "foundation-ssg",
+  "name": "RH-Digital",
   "version": "1.0.0",
   "authors": [
-    "ZURB <foundation@zurb.com>"
+    "Joel Sandén <joel.sanden@regionahalland.se>"
   ],
-  "description": "Static site generator for Foundation for Sites.",
+  "description": "Digital Guidelines and best practices for Region Halland",
   "main": "gulpfile.js",
   "license": "MIT",
   "ignore": [

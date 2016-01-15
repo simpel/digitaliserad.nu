@@ -1,14 +1,14 @@
 {
   "name": "RH Digital",
   "version": "1.0.0",
-  "description": "Presentation av Region Hallands digitala agenda",
+  "description": "Digital Guidelines and best practices for Region Halland",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp build --production"
   },
   "author": "Joel Sandén <joel.sanden@regionhalland.se",
-  "license": "No license",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
