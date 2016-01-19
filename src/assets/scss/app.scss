@@ -42,21 +42,91 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+@import 'components/foundation-icons';
+
 
 body {
     background: $white;
+}
+
+.bar {
+    padding: $global-padding/4 0;
+    margin: 0;
+
+    .button, p {
+        margin-bottom: 0;
+    }
+
+    .brandmark {
+        background: no-repeat url('../img/brandmark.png') left center;
+        padding-left: 29px;
+        border-color: $white;
+        color: $body-font-color;
+
+        &:hover, &:active, &:visited, &:focus {
+            background: no-repeat url('../img/brandmark.png') left center;
+            padding-left: 29px;
+            border-color: $white;
+        }
+    }
+
+    .menuicon {
+        color: $black;
+      
+
+        &:hover {
+            background-color: rgba($primary-color, 0.1);
+        }
+    }
+}
+
+.touchable {
+    padding: $global-padding/4 $global-padding;
+    display:inline-block;
+
+}
+
+.separator {
+   
+    margin: 0 $global-margin;
+
+    &.border {
+        border-left: 1px solid rgba($white, 0.5);
+        border-right: 1px solid rgba($black, 0.5);
+    }
+}
+
+.main {
+    
+    li {
+        border-bottom: 1px solid $medium-gray;
+    }
+
+    a:hover {
+        text-decoration: none;
+        background: $primary-color;
+        color: $white;
+    } 
+
+    small {
+        color: $medium-gray;
+
+        font-family: $label-font-family;
+        font-weight: bold;
+        font-size: 60%;
+        line-height: 1.6;
+        display: block;
+        margin-top: 5px;
+
+
+    }
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-.button {
-    font-family: $header-font-family;
-    &:hover {
-        text-decoration: underline;
-    }
-}
+
 
 h6 {
     text-transform: uppercase;
@@ -106,20 +176,6 @@ ul li.header {
 	    font-size: 0.6rem;
 	    color: $dark-gray;
 	}
-}
-
-nav {
-	background: $white;
-	border-bottom: 1px solid $light-gray;
-	padding: 1em 0;
-}
-
-.brandmark {
-	font-weight: normal;
-	font-style: normal;
-	padding: 0rem 0 0 1.6rem;
-	background: no-repeat url('../img/brandmark.png') left center;
-	display: block;
 }
 
 section {
@@ -172,10 +228,4 @@ section {
         color: $medium-gray;
     }
 
-}
-
-.highlight {
-    border-bottom: 1px dotted $body-font-color;
-    display: inline-block;
-    cursor: help;
 }

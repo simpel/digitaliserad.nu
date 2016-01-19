@@ -21,6 +21,7 @@ var PATHS = {
   assets: [
     'src/assets/**/*',
     'src/assets/data',
+    'src/assets/scss/components/foundation-icons/**',
     '!src/assets/{!img,js,scss}/**/*'
   ],
   sass: [

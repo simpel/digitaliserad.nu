@@ -62,14 +62,10 @@
         highlight: function(words) {
 		   	
         	for (var i = words.length - 1; i >= 0; i--) {
-
-        		
-
         		$(this.element).highlight(words[i][0], words[i][1]);
         	};
-        	
-		   	
 
+        	$(document).foundation();
 
         },
         generateFlatList: function(data) {

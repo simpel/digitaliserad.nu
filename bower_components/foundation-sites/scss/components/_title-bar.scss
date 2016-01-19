@@ -9,14 +9,20 @@
 @mixin foundation-title-bar {
   .title-bar {
     @include clearfix;
-    background: $black;
-    color: $white;
-    padding: 0.5rem;
+    background: $titlebar-background;
+    color: $titlebar-color;
+    padding: $titlebar-padding;
+
 
     .menu-icon {
-      margin-#{$global-left}: 0.25rem;
+      margin-#{$global-left}: $titlebar-icon-spacing;
       margin-#{$global-right}: 0.5rem;
-    }
+      color: $titlebar-icon-color;
+
+        &:hover {
+          color: $titlebar-icon-color-hover;
+        }
+      }
   }
 
   .title-bar-left {
@@ -29,7 +35,8 @@
   }
 
   .title-bar-title {
-    font-weight: bold;
+    font-weight: $titlebar-text-font-weight;
+    color: $titlebar-color;
     vertical-align: middle;
     display: inline-block;
   }

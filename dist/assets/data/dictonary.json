@@ -1,7 +1,7 @@
 [
 	{
 	"words": ["dagsläget", "och", "invånarresa", "kundresa", "customer journey"],
-	"meaning": "En kundresa menas alla de steg en kund eller användare går igenom från det att ett behov skapas till att det är tillfredsällt. Ett exempel på en kundresa kan vara \"Jag vill boka tid på en vårdcentral\". En kundresa byggs upp av ett antal use case."
+	"meaning": "Med kundresa menas alla de steg en kund eller användare går igenom från det att ett behov skapas till att det är tillfredsällt. Ett exempel på en kundresa kan vara \"Jag vill boka tid på en vårdcentral\". En kundresa byggs upp av ett antal use case."
 	},
 	{
 	"words": ["use case", "usecase"],
