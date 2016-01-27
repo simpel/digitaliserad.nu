@@ -20,6 +20,7 @@ jQuery.fn.highlight = function(word, meaning) {
   if (node.nodeType == 3) {
    var pos = node.data.toUpperCase().indexOf(word);
    pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
+
    if (pos >= 0) {
     
 
@@ -27,7 +28,7 @@ jQuery.fn.highlight = function(word, meaning) {
   
     spannode.setAttribute("title", meaning);
     spannode.setAttribute("aria-haspopup", "true");
-    spannode.setAttribute("class", "has-tip top");
+    spannode.setAttribute("class", "helpme");
     spannode.setAttribute("data-disable-hover", "false");
     spannode.setAttribute("data-tooltip", "");
 
@@ -39,6 +40,7 @@ jQuery.fn.highlight = function(word, meaning) {
     var middleclone = middlebit.cloneNode(true);
 
     spannode.appendChild(middleclone);
+    console.log(spannode);
     middlebit.parentNode.replaceChild(spannode, middlebit);
    
 

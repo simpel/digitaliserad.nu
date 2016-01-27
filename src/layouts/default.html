@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RH Digital</title>
+        <title>{{title}} - RH Digital</title>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300|Cardo:400,400italic,700'
         rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{root}}/assets/css/app.css">
@@ -14,31 +14,24 @@
     </head>
 
     <body>
-        
-                
-                    <div class="row bar">
-                        <div class="small-12 columns text-left">
-                            <a href="#" data-open="offCanvas" class="touchable menuicon"><i class="fi-list medium"></i></a><span class="separator"></span><a href="/Välkommen.html" class="brandmark">RH Digital</a><span class="separator border"></span>{{page}}
-                        </div>
-                       
-                       
-                    </div>
-                
-
-
-<div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper">
             <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+                <div class="off-canvas-content" data-off-canvas-content>
+                        <div class="row bar">
+                            <div class="small-12 columns text-left">
+                                <a href="#" data-toggle="offCanvas" class="touchable menuicon"><i class="fi-list medium"></i></a>
+                                <span class="separator"></span><a href="/Välkommen.html"
+                                class="brandmark">RH Digital</a>
+                                <span class="separator border"></span>{{title}}
+                            </div>
+                        </div>
+                      
+
+                    {{> body}} 
+                    {{> footer}}
+                </div>
                 <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
                     {{> nav}}
-                </div>
-<div class="off-canvas-content" data-off-canvas-content>
-
-
-
-
-
-                {{> body}} 
-                {{> footer}}
                 </div>
             </div>
         </div>

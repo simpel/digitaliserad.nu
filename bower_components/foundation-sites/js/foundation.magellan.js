@@ -14,11 +14,11 @@
    */
   function Magellan(element, options) {
     this.$element = element;
-    this.options  = $.extend({}, Magellan.defaults, options);
+    this.options  = $.extend({}, Magellan.defaults, this.$element.data(), options);
 
     this._init();
 
-    Foundation.registerPlugin(this);
+    Foundation.registerPlugin(this, 'Magellan');
   }
 
   /**
@@ -54,7 +54,13 @@
      * @option
      * @example true
      */
-    deepLinking: false
+    deepLinking: false,
+    /**
+     * Number of pixels to offset the scroll of the page on item click if using a sticky nav bar.
+     * @option
+     * @example 25
+     */
+    barOffset: 0
   };
 
   /**
@@ -87,7 +93,7 @@
         html = document.documentElement;
 
     this.points = [];
-    this.winHeight = Math.round(Math.max(window.innerHeight, document.body.clientHeight));
+    this.winHeight = Math.round(Math.max(window.innerHeight, html.clientHeight));
     this.docHeight = Math.round(Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight));
 
     this.$targets.each(function(){
@@ -108,8 +114,12 @@
           duration: _this.options.animationDuration,
           easing:   _this.options.animationEasing
         };
-
     $(window).one('load', function(){
+      if(_this.options.deepLinking){
+        if(location.hash){
+          _this.scrollToLoc(location.hash);
+        }
+      }
       _this.calcPoints();
       _this._updateActive();
     });
@@ -119,16 +129,26 @@
       'scrollme.zf.trigger': this._updateActive.bind(this)
     }).on('click.zf.magellan', 'a[href^="#"]', function(e) {
         e.preventDefault();
-        var arrival   = this.getAttribute('href'),
-            scrollPos = $(arrival).offset().top - _this.options.threshold / 2;
+        var arrival   = this.getAttribute('href');
+        _this.scrollToLoc(arrival);
+    });
+  };
+  /**
+   * Function to scroll to a given location on the page.
+   * @param {String} loc - a properly formatted jQuery id selector.
+   * @example '#foo'
+   * @function
+   */
+  Magellan.prototype.scrollToLoc = function(loc){
+    var scrollPos = $(loc).offset().top - this.options.threshold / 2 - this.options.barOffset;
 
-        // requestAnimationFrame is disabled for this plugin currently
-        // Foundation.Move(_this.options.animationDuration, $body, function(){
-          $body.stop(true).animate({
-            scrollTop: scrollPos
-          }, opts);
-        });
-      // });
+    $(document.body).stop(true).animate({
+        scrollTop: scrollPos
+      },
+      {
+        duration: this.options.animationDuration,
+        easiing: this.options.animationEasing
+     });
   };
   /**
    * Calls necessary functions to update Magellan upon DOM change
@@ -186,9 +206,10 @@
     this.$element.off('.zf.trigger .zf.magellan')
         .find('.' + this.options.activeClass).removeClass(this.options.activeClass);
 
-    var hash = this.$active[0].getAttribute('href');
-
-    window.location.hash.replace(hash, '');
+    if(this.options.deepLinking){
+      var hash = this.$active[0].getAttribute('href');
+      window.location.hash.replace(hash, '');
+    }
 
     Foundation.unregisterPlugin(this);
   };

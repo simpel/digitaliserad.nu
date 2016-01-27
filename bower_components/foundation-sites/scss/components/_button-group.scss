@@ -8,19 +8,19 @@
 
 /// Margin for button groups.
 /// @type Number
-$buttongroup-margin: 1rem;
+$buttongroup-margin: 1rem !default;
 
 /// Margin between buttons in a button group.
 /// @type Border
-$buttongroup-spacing: 1px;
+$buttongroup-spacing: 1px !default;
 
 /// Selector for the buttons inside a button group.
 /// @type String
-$buttongroup-child-selector: '.button';
+$buttongroup-child-selector: '.button' !default;
 
 /// Maximum number of buttons that can be in an even-width button group.
 /// @type Number
-$buttongroup-expand-max: 6;
+$buttongroup-expand-max: 6 !default;
 
 /// Add styles for a button group container.
 /// @param {String} $child-selector [$buttongroup-child-selector] - Selector for the buttons inside a button group.
@@ -43,19 +43,27 @@ $buttongroup-expand-max: 6;
 }
 
 /// Creates a full-width button group, making each button equal width.
-/// @param {Keyword|Number} $count [auto] - Number of buttons inside the button group. Set to `auto` to generate CSS that will account for a variable number of buttons.
 /// @param {String} $selector [$buttongroup-child-selector] - Selector for the buttons inside a button group.
 @mixin button-group-expand(
-  $count: auto,
-  $selector: $buttongroup-child-selector
+  $selector: $buttongroup-child-selector,
+  $count: null
 ) {
+  @if $count != null {
+    @warn 'button-group-expand(): the $count property is no longer needed. This parameter will be removed in Foundation 6.2.';
+  }
+
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
   #{$selector} {
-    @if $count == auto {
-      @include auto-width($buttongroup-expand-max, $selector);
-    }
-    @else if type-of($count) == 'number' {
-      width: percentage(1 / $count);
-    }
+    display: table-cell;
+    float: none;
   }
 }
 
@@ -66,7 +74,10 @@ $buttongroup-expand-max: 6;
 ) {
   #{$selector} {
     width: 100%;
-    border-#{$global-right}: 0;
+
+    &:not(:last-child) {
+      border-#{$global-right}: $buttongroup-spacing solid;
+    }
   }
 }
 
@@ -96,8 +107,16 @@ $buttongroup-expand-max: 6;
 
     // Colors
     @each $name, $color in $foundation-colors {
-      &.#{$name} #{$buttongroup-child-selector} {
-        @include button-style($color, auto, auto);
+      @if $button-fill != hollow {
+        &.#{$name} #{$buttongroup-child-selector} {
+          @include button-style($color, auto, auto);
+        }
+      }
+      @else {
+        &.#{$name} #{$buttongroup-child-selector} {
+          @include button-hollow;
+          @include button-hollow-style($color);
+        }
       }
     }
 
@@ -109,6 +128,17 @@ $buttongroup-expand-max: 6;
     &.stacked-for-small {
       @include breakpoint(medium) {
         @include button-group-unstack;
+      }
+    }
+
+    &.stacked-for-small.expanded {
+      @include breakpoint(small only) {
+        display: block;
+
+        #{$buttongroup-child-selector} {
+          display: block;
+          border-right: 0;
+        }
       }
     }
   }

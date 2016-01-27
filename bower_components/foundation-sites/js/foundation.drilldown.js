@@ -22,7 +22,7 @@
 
     this._init();
 
-    Foundation.registerPlugin(this);
+    Foundation.registerPlugin(this, 'Drilldown');
     Foundation.Keyboard.register('Drilldown', {
       'ENTER': 'open',
       'SPACE': 'open',
@@ -37,15 +37,15 @@
   }
   Drilldown.defaults = {
     /**
-     * Markup used for JS generated back button. Prepended to submenu lists and deleted on `destroy` method.
+     * Markup used for JS generated back button. Prepended to submenu lists and deleted on `destroy` method, 'js-drilldown-back' class required. Remove the backslash (`\`) if copy and pasting.
      * @option
-     * @example '<li><a>Back</a></li>'
+     * @example '<\li><\a>Back<\/a><\/li>'
      */
-    backButton: '<li class="js-drilldown-back" tabindex="0"><a>Back</a></li>',
+    backButton: '<li class="js-drilldown-back"><a>Back</a></li>',
     /**
-     * Markup used to wrap drilldown menu. Use a class name for independent styling, or the JS applied class: `is-drilldown`.
+     * Markup used to wrap drilldown menu. Use a class name for independent styling; the JS applied class: `is-drilldown` is required. Remove the backslash (`\`) if copy and pasting.
      * @option
-     * @example '<div></div>'
+     * @example '<\div class="is-drilldown"><\/div>'
      */
     wrapper: '<div></div>',
     /**
@@ -53,7 +53,7 @@
      * @option
      * @example false
      */
-    closeOnClick: false,
+    closeOnClick: false
     // holdOpen: false
   };
   /**
@@ -61,15 +61,12 @@
    * @private
    */
   Drilldown.prototype._init = function(){
-    this.$submenuAnchors = this.$element.find('li.has-submenu');
-    this.$submenus = this.$submenuAnchors.children('[data-submenu]').addClass('is-drilldown-sub')/*.wrap($(this.options.wrapper).addClass('is-drilldown-sub'))*/;
-    // this.$rootElems = this.$element.children('[data-submenu]')/*.addClass('first-sub')*/;
+    this.$submenuAnchors = this.$element.find('li.is-drilldown-submenu-parent');
+    this.$submenus = this.$submenuAnchors.children('[data-submenu]');
     this.$menuItems = this.$element.find('li').not('.js-drilldown-back').attr('role', 'menuitem');
-    // this.$submenus;
-
 
     this._prepareMenu();
-    // this._getMaxDims();
+
     this._keyboardEvents();
   };
   /**
@@ -86,7 +83,8 @@
     // }
     this.$submenuAnchors.each(function(){
       var $sub = $(this);
-      $sub.find('a')[0].removeAttribute('href');
+      var $link = $sub.find('a:first');
+      $link.data('savedHref', $link.attr('href')).removeAttr('href');
       $sub.children('[data-submenu]')
           .attr({
             'aria-hidden': true,
@@ -100,8 +98,8 @@
           $back = $menu.find('.js-drilldown-back');
       if(!$back.length){
         $menu.prepend(_this.options.backButton);
-        _this._back($menu);
       }
+      _this._back($menu);
     });
     if(!this.$element.parent().hasClass('is-drilldown')){
       this.$wrapper = $(this.options.wrapper).addClass('is-drilldown').css(this._getMaxDims());
@@ -120,12 +118,14 @@
 
     $elem.off('click.zf.drilldown')
     .on('click.zf.drilldown', function(e){
-      e.stopImmediatePropagation();
-      e.preventDefault();
-
-      if(e.target !== e.currentTarget.firstElementChild){
-        return false;
+      if($(e.target).parentsUntil('ul', 'li').hasClass('is-drilldown-submenu-parent')){
+        e.stopImmediatePropagation();
+        e.preventDefault();
       }
+
+      // if(e.target !== e.currentTarget.firstElementChild){
+      //   return false;
+      // }
       _this._show($elem);
 
       if(_this.options.closeOnClick){
@@ -157,7 +157,7 @@
           return;
         }
       });
-      Foundation.Keyboard.handleKey(e, _this, {
+      Foundation.Keyboard.handleKey(e, 'Drilldown', {
         next: function() {
           if ($element.is(_this.$submenuAnchors)) {
             _this._show($element);
@@ -207,7 +207,7 @@
    * @fires Drilldown#closed
    */
   Drilldown.prototype._hideAll = function(){
-    var $elem = this.$element.find('.is-drilldown-sub.is-active').addClass('is-closing');
+    var $elem = this.$element.find('.is-drilldown-submenu.is-active').addClass('is-closing');
     $elem.one(Foundation.transitionend($elem), function(e){
       $elem.removeClass('is-active is-closing');
     });
@@ -240,7 +240,7 @@
    */
   Drilldown.prototype._menuLinkEvents = function(){
     var _this = this;
-    this.$menuItems.not('.has-submenu')
+    this.$menuItems.not('.is-drilldown-submenu-parent')
         .off('click.zf.drilldown')
         .on('click.zf.drilldown', function(e){
           // e.stopImmediatePropagation();
@@ -306,10 +306,15 @@
     Foundation.Nest.Burn(this.$element, 'drilldown');
     this.$element.unwrap()
                  .find('.js-drilldown-back').remove()
-                 .end().find('.is-active, .is-closing, .is-drilldown-sub').removeClass('is-active is-closing is-drilldown-sub')
+                 .end().find('.is-active, .is-closing, .is-drilldown-submenu').removeClass('is-active is-closing is-drilldown-submenu')
                  .end().find('[data-submenu]').removeAttr('aria-hidden tabindex role')
                  .off('.zf.drilldown').end().off('zf.drilldown');
-
+    this.$element.find('a').each(function(){
+      var $link = $(this);
+      if($link.data('savedHref')){
+        $link.attr('href', $link.data('savedHref')).removeData('savedHref');
+      }else{ return; }
+    });
     Foundation.unregisterPlugin(this);
   };
   Foundation.plugin(Drilldown, 'Drilldown');

@@ -52,6 +52,7 @@ body {
 .bar {
     padding: $global-padding/4 0;
     margin: 0;
+    
 
     .button, p {
         margin-bottom: 0;
@@ -59,15 +60,11 @@ body {
 
     .brandmark {
         background: no-repeat url('../img/brandmark.png') left center;
-        padding-left: 29px;
+        padding-left: rem-calc(26) + ($global-margin/2);
         border-color: $white;
         color: $body-font-color;
 
-        &:hover, &:active, &:visited, &:focus {
-            background: no-repeat url('../img/brandmark.png') left center;
-            padding-left: 29px;
-            border-color: $white;
-        }
+      
     }
 
     .menuicon {
@@ -96,23 +93,31 @@ body {
     }
 }
 
+.off-canvas {
+    bottom: 0;
+}
+
+
 .main {
     
     li {
-        border-bottom: 1px solid $medium-gray;
+        border-bottom: 1px solid $dark-gray;
     }
-
+    a {
+        color: $white;
+        font-size: 1rem;
+    }
     a:hover {
         text-decoration: none;
-        background: $primary-color;
+        background: $dark-gray;
         color: $white;
     } 
 
     small {
-        color: $medium-gray;
-
+        color: $light-gray;
+        text-transform: uppercase;
         font-family: $label-font-family;
-        font-weight: bold;
+        font-weight: normal;
         font-size: 60%;
         line-height: 1.6;
         display: block;
@@ -180,6 +185,33 @@ ul li.header {
 
 section {
     padding: 2em 0;
+}
+
+.helpme {
+    position: relative;
+
+    &:after {
+
+        font-family: "foundation-icons";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        text-decoration: inherit;
+        content: "\f15e";
+        position: absolute;
+        font-size: 70%;
+        opacity: 0.1;
+        top: -20%;
+
+    }
+
+    &:hover:after {
+        opacity: 1;
+    }
 }
 
 .plays section:nth-child(even) {

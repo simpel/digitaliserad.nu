@@ -68,10 +68,14 @@ $pagination-arrows: true !default;
   li {
     font-size: $pagination-font-size;
     margin-#{$global-right}: $pagination-item-spacing;
-    display: none;
     border-radius: $pagination-radius;
 
-    @if not $pagination-mobile-items {
+    @if $pagination-mobile-items {
+      display: inline-block;
+    }
+    @else {
+      display: none;
+
       &:last-child,
       &:first-child {
         display: inline-block;
@@ -93,25 +97,6 @@ $pagination-arrows: true !default;
 
     &:hover {
       background: $pagination-item-background-hover;
-    }
-  }
-
-  // Symbols
-  @if $pagination-arrows {
-    [aria-label="previous"] {
-      &::before {
-        content: '«';
-        display: inline-block;
-        margin-#{$global-right}: 0.75rem;
-      }
-    }
-
-    [aria-label="next"] {
-      &::after {
-        content: '»';
-        display: inline-block;
-        margin-#{$global-left}: 0.75rem;
-      }
     }
   }
 }
@@ -156,6 +141,22 @@ $pagination-arrows: true !default;
 
     .ellipsis::after {
       @include pagination-ellipsis;
+    }
+  }
+
+  @if $pagination-arrows {
+    .pagination-previous a::before,
+    .pagination-previous.disabled::before {
+      content: '«';
+      display: inline-block;
+      margin-#{$global-right}: 0.5rem;
+    }
+
+    .pagination-next a::after,
+    .pagination-next.disabled::after {
+      content: '»';
+      display: inline-block;
+      margin-#{$global-left}: 0.5rem;
     }
   }
 }
