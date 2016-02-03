@@ -14,7 +14,7 @@ Johann Burkard
 
 */
 
-jQuery.fn.highlight = function(word, meaning) {
+jQuery.fn.highlight = function(word, meaning, synonyms) {
  function innerHighlight(node, word) {
   var skip = 0;
   if (node.nodeType == 3) {
@@ -24,8 +24,10 @@ jQuery.fn.highlight = function(word, meaning) {
    if (pos >= 0) {
     
 
+    meaning = "joel <br />"+meaning;
+
+
     var spannode = document.createElement('span');
-  
     spannode.setAttribute("title", meaning);
     spannode.setAttribute("aria-haspopup", "true");
     spannode.setAttribute("class", "helpme");
@@ -40,7 +42,6 @@ jQuery.fn.highlight = function(word, meaning) {
     var middleclone = middlebit.cloneNode(true);
 
     spannode.appendChild(middleclone);
-    console.log(spannode);
     middlebit.parentNode.replaceChild(spannode, middlebit);
    
 

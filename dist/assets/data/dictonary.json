@@ -1,12 +1,9 @@
 [
 	{
 		"words": [
-			"användarresa", 
-			"användarresan", 
-			"invånarresa",
-			"invånarresan", 
-			"kundresa", 
-			"kundresan",
+			"användarresa",  
+			"invånarresa", 
+			"kundresa",
 			"customer journey"
 		],
 		"meaning": "Med kundresa menas alla de steg en kund eller användare går igenom från det att ett behov skapas till att det är tillfredsällt. Ett exempel på en kundresa kan vara \"Jag vill boka tid på en vårdcentral\". En kundresa byggs upp av ett antal use case."
@@ -27,5 +24,16 @@
 		],
 		"meaning": 
 			"Det mättal som anger hur stor andel av besökarna som genomför den aktivitet som mäts. T.ex. \"Conversionraten på köpflödet är 8% för 8 av 100 kunder handlade en produkt.\""
+	}
+	,
+	{
+		"words": [
+			"objektsledare", 
+			"product owner",
+			"objektsägare",
+			"objektägare"
+		],
+		"meaning": 
+			"Den person som är ansvarig för prioriteringen av arbetet. Objektsägaren ansvarar även för visionen kring produkten och säkerställer att vi gör rätt saker för våra invånare."
 	}
 ]

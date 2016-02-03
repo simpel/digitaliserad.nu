@@ -72,10 +72,15 @@
             var list = [];
 
             $.each(data, function(index, item) {
+
+
+
                 $.each(item.words, function(index, word) {
-                    list.push([word, item.meaning]);
+                    list.push([word, item.meaning, item.words]);
                 });
             });
+
+            console.log(list);
 
             return list;
         }
