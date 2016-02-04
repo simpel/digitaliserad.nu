@@ -10,10 +10,24 @@ title: Verktygslådan
         <div class="row">
             <div class="large-8 large-centered columns">
                 <h2>Verktygslåda</h2>
-                <p>I vårt dagliga arbete har vi behov av ett flertal verktyg för att öka vår leverans grad. Använd filtren nedan för att hitta de verktyg och metoder vi rekomenderar</p>
-               
+                <p>I vårt dagliga arbete har vi behov av ett flertal verktyg för att öka vår leverans grad. Använd filtren nedan för att hitta de verktyg och metoder vi rekommenderar</p>
             </div>
         </div>
+        <div class="row">
+            <div class="large-8 large-centered columns">
+                <div class="row">
+                    <div class="large-6 columns ">
+                        <h3>Verktyg</h3>
+                        {{> toolbox_tools }}
+                    </div>
+                    <div class="large-6 columns">
+                        <h3>Metoder</h3>
+                        {{> toolbox_methods }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </section>
     <section>
         <div class="row">
@@ -33,6 +47,3 @@ title: Verktygslådan
             </div>
         </div>
     </section>
-    <div class="plays" id="plays">
-     {{> tools_usertests}}
-    </div>

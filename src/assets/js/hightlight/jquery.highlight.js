@@ -22,10 +22,6 @@ jQuery.fn.highlight = function(word, meaning, synonyms) {
    pos -= (node.data.substr(0, pos).toUpperCase().length - node.data.substr(0, pos).length);
 
    if (pos >= 0) {
-    
-
-    meaning = "joel <br />"+meaning;
-
 
     var spannode = document.createElement('span');
     spannode.setAttribute("title", meaning);
@@ -34,9 +30,6 @@ jQuery.fn.highlight = function(word, meaning, synonyms) {
     spannode.setAttribute("data-disable-hover", "false");
     spannode.setAttribute("data-tooltip", "");
 
-    
-    
-    
     var middlebit = node.splitText(pos);
     var endbit = middlebit.splitText(word.length);
     var middleclone = middlebit.cloneNode(true);
