@@ -26,7 +26,7 @@
     // Create the defaults once
     var pluginName = "DictIt",
         defaults = {
-            json: "/assets/data/dictonary.json"
+            json: "assets/data/dictonary.json"
         };
 
     // The actual plugin constructor
