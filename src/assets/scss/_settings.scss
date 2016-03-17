@@ -47,8 +47,8 @@
 $global-font-size: 120%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.6;
-$primary-color: #114687;
-$secondary-color: #D3E6F5;
+$primary-color: #105B63;
+$secondary-color: #FFD34E;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
@@ -59,8 +59,8 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Cardo', 'Times New Roman', serif;
-$label-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$body-font-family: 'Raleway', 'Times New Roman', serif;
+$label-font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -96,8 +96,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$header-font-weight: $global-weight-normal;
+$header-font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$header-font-weight: 700;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-sizes: (
