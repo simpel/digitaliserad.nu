@@ -1,10 +1,10 @@
 {
-  "name": "RH-Digital",
+  "name": "digitaliserad.nu",
   "version": "1.0.0",
   "authors": [
     "Joel Sandén <joel.sanden@regionahalland.se>"
   ],
-  "description": "Digital Guidelines and best practices for Region Halland",
+  "description": "Digital Guidelines and best practices for a digitalized workspace",
   "main": "gulpfile.js",
   "license": "MIT",
   "ignore": [

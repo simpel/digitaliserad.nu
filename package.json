@@ -1,7 +1,7 @@
 {
-  "name": "RH Digital",
+  "name": "Digitaliserad.nu",
   "version": "1.0.0",
-  "description": "Digital Guidelines and best practices for Region Halland",
+  "description": "Digital Guidelines and best practices for a digitalized workspace",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
@@ -31,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/simpel/RH-Digital"
+    "url": "https://github.com/simpel/digitaliserad.nu"
   },
   "bugs": {
-    "url": "https://github.com/simpel/RH-Digital/issues",
+    "url": "https://github.com/simpel/digitaliserad.nu/issues",
     "email": "joel.sanden@regionhalland.se"
   },
   "private": true
