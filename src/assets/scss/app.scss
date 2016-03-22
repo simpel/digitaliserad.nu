@@ -4,6 +4,7 @@
 @import 'foundation';
 @import 'motion-ui';
 
+
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
@@ -49,21 +50,7 @@ body {
     background: $white;
 }
 
-.bar {
-    padding: $global-padding 0;
-    background: #DB9E36;
-    color: #FFF;
 
-    a {
-        color: #FFFAD5;
-    }
-}
-
-.touchable {
-    padding: $global-padding/4 $global-padding;
-    display:inline-block;
-
-}
 
 .separator {
    
@@ -73,11 +60,6 @@ body {
         border-left: 1px solid rgba($white, 1);
     }
 }
-
-.off-canvas {
-    bottom: 0;
-}
-
 
 .main {
     
@@ -166,6 +148,60 @@ ul li.header {
 
 section {
     padding: 2em 0;
+
+    &.bar {
+        background: $primary-color;
+        color: #FFF;
+        padding: 1em 0;
+
+        a {
+            color: #FFFAD5;
+        }
+    }
+
+    &.hero {
+        background: $secondary-color;
+        padding: 4em 0 4em 0;
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-weight: normal;
+            text-align: center;
+            margin-bottom: 0;
+        }
+    }
+
+    &.subhero {
+        background: #DB9E36;
+        
+        padding: 2em 0;
+
+        a {
+            
+            color: $white;
+
+            p.lead {
+                color: $primary-color;
+            }
+
+            &:hover {
+                text-decoration: none;
+
+                p.lead {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &.newsletter {
+        background: #BD4932;
+        color: #FFF;
+    }
+
 }
 
 .helpme {
@@ -199,20 +235,7 @@ section {
     background-color: #F8F8F8;
 }
 
-.hero {
-    background: $secondary-color;
-    padding: 5em 0;
-    h1 {
-        text-align: center;
-        margin-bottom: 0.5em;
-    }
 
-    h2 {
-        font-weight: normal;
-        text-align: center;
-        margin-bottom: 2em;
-    }
-}
 
 
 .page_header {
@@ -246,16 +269,3 @@ section {
     }
 
 }
-
-iframe {
-    border: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-
