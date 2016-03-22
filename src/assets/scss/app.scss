@@ -151,11 +151,11 @@ section {
 
     &.bar {
         background: $primary-color;
-        color: #FFF;
+        color: lighten($primary-color, 60%);
         padding: 1em 0;
 
         a {
-            color: #FFFAD5;
+            color: #FFF;
         }
     }
 
@@ -175,13 +175,13 @@ section {
     }
 
     &.subhero {
-        background: #DB9E36;
+        background: #FFF;
         
         padding: 2em 0;
 
         a {
             
-            color: $white;
+            color: $dark-gray;
 
             p.lead {
                 color: $primary-color;
