@@ -224,6 +224,12 @@ section {
         }
         li {
             color: #FFF;
+            a {
+            font-weight: normal;
+        }
+        }
+        a {
+            font-weight: bold;
         }
  
     }
@@ -267,6 +273,18 @@ section {
 }
 
 
+table.contact {
+    font-size: 140%;
+    border: none;
+    td, tr {
+        background: transparent !important;
+    }
+
+    th {
+        text-align: right;
+        text-weight: normal;
+    }
+}
 
 
 
