@@ -6,6 +6,7 @@ var panini   = require('panini');
 var rimraf   = require('rimraf');
 var sequence = require('run-sequence');
 var sherpa   = require('style-sherpa');
+var rename   = require('gulp-rename');
 
 // Check for --production flag
 var isProduction = !!(argv.production);
@@ -23,6 +24,9 @@ var PATHS = {
     'src/assets/data',
     'src/assets/scss/components/foundation-icons/**',
     '!src/assets/{!img,js,scss}/**/*'
+  ],
+  cname: [
+    'src/data'
   ],
   sass: [
     'bower_components/foundation-sites/scss',
@@ -48,8 +52,8 @@ gulp.task('clean', function(done) {
 // Copy files out of the assets folder
 // This task skips over the "img", "js", and "scss" folders, which are parsed separately
 gulp.task('copy', function() {
-  gulp.src(PATHS.assets)
-    .pipe(gulp.dest('dist/assets'));
+  gulp.src(PATHS.assets).pipe(gulp.dest('dist/assets'));
+  gulp.src('src/data/CNAME').pipe(gulp.dest('dist'));
 });
 
 // Copy page templates into finished HTML files
