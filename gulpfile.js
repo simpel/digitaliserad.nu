@@ -34,6 +34,7 @@ var PATHS = {
     'bower_components/foundation-sites/dist/foundation.min.js',
     'src/assets/js/hightlight/jquery.highlight.js',
     'src/assets/js/dictIt/dictIt.js',
+    'src/assets/js/three.min.js',
     'src/assets/js/app.js'
   ]
 };

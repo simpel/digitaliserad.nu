@@ -94,11 +94,12 @@ a:hover {
     text-decoration: underline;
 }
 
-
+h4, h5, h6 {
+    font-weight: normal;
+}
 
 h6 {
     text-transform: uppercase;
-    font-weight: normal;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 0.6rem;
     color: $dark-gray;
@@ -144,6 +145,20 @@ ul li.header {
 	    font-size: 0.6rem;
 	    color: $dark-gray;
 	}
+}
+
+
+#container {
+    position: relative;
+}
+
+canvas { 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0.2;
 }
 
 section {
@@ -197,6 +212,22 @@ section {
         }
     }
 
+    &.page_header {
+        background: lighten($primary-color, 60%);
+        color: $primary-color;
+        .two_columns {
+            -webkit-columns: 2;
+            /* Chrome, Safari, Opera */
+            -moz-columns: 2;
+            /* Firefox */
+            columns: 2;
+        }
+        li {
+            color: #FFF;
+        }
+ 
+    }
+
     &.newsletter {
         background: #BD4932;
         color: #FFF;
@@ -238,23 +269,7 @@ section {
 
 
 
-.page_header {
-    background: $primary-color;
-    color: $white;
-    .two_columns {
-        -webkit-columns: 2;
-        /* Chrome, Safari, Opera */
-        -moz-columns: 2;
-        /* Firefox */
-        columns: 2;
-    }
-    li {
-        color: #A0B8D6;
-    }
-    a {
-        color: $white;
-    }
-}
+
 
 .footer {
     background: $dark-gray;
