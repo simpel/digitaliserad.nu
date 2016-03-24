@@ -54,6 +54,7 @@ gulp.task('clean', function(done) {
 gulp.task('copy', function() {
   gulp.src(PATHS.assets).pipe(gulp.dest('dist/assets'));
   gulp.src('src/data/CNAME').pipe(gulp.dest('dist'));
+  gulp.src('src/data/sitemap.xml').pipe(gulp.dest('dist'));
 });
 
 // Copy page templates into finished HTML files
