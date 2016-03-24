@@ -198,14 +198,14 @@ section {
             
             color: $dark-gray;
 
-            p.lead {
+            h4 {
                 color: $primary-color;
             }
 
             &:hover {
                 text-decoration: none;
 
-                p.lead {
+                h4 {
                     text-decoration: underline;
                 }
             }
