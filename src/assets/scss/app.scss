@@ -50,8 +50,6 @@ body {
     background: $white;
 }
 
-
-
 .separator {
    
     margin: 0 $global-margin;
@@ -215,13 +213,17 @@ section {
     &.page_header {
         background: lighten($primary-color, 60%);
         color: $primary-color;
-        .two_columns {
-            -webkit-columns: 2;
-            /* Chrome, Safari, Opera */
-            -moz-columns: 2;
-            /* Firefox */
-            columns: 2;
+        
+        @media screen and (min-width: 40em) {
+            .two_columns {
+                -webkit-columns: 2;
+                /* Chrome, Safari, Opera */
+                -moz-columns: 2;
+                /* Firefox */
+                columns: 2;
+            }
         }
+        
         li {
             color: #FFF;
             a {
@@ -268,8 +270,44 @@ section {
     }
 }
 
+@media screen and (max-width: 39.9375em) {
+    .media-object {
+        @include clearfix;
+        
+        .media-object-section  {        
+            display: inline;
+        }
+        
+        .media-object-section:first-child  {        
+            display: inline;
+            float: left;
+        }
+
+        .media-object-section img {
+            width: 70px;
+            margin-top: $global-margin;
+
+        }
+    }
+}
+
+
+
 .alternate section:nth-child(even) {
-    background-color: #F8F8F8;
+    background-color: #f8f8f8;
+
+    .media-object {
+    @include clearfix;
+
+    .media-object-section:first-child {
+        float: right;
+        padding-left: $global-padding;
+        padding-right: 0;
+    }
+
+}
+   
+
 }
 
 
