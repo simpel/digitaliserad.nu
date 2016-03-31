@@ -88,7 +88,7 @@ body {
     }
 }
 
-a:hover {
+a:hover, a.active {
     text-decoration: underline;
 }
 
@@ -192,22 +192,7 @@ section {
         
         padding: 2em 0;
 
-        a {
-            
-            color: $dark-gray;
-
-            h4 {
-                color: $primary-color;
-            }
-
-            &:hover {
-                text-decoration: none;
-
-                h4 {
-                    text-decoration: underline;
-                }
-            }
-        }
+        
     }
 
     &.page_header {
