@@ -1,18 +1,10 @@
-$(document).foundation();
-$('body').DictIt();
-
-
-$(document).ready(function(){
-  $('.zoom').zoom();
-});
-
-if($('.hero').length > 0) {
-	var container, scene, camera, renderer;
-	var radius = 100, theta = 0;
-
-	init();
-	animate();
-}
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
 
 function init() {
 
@@ -32,8 +24,8 @@ function init() {
 		var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0xFFFFFF, opacity: 0.1 } ) );
 		var scale = Math.random() + 0.5;
 
-		object.position.x = Math.random() * 800 - 400;
-		object.position.y = Math.random() * 800 - 400;
+		object.position.x = Math.random() * container.clientWidth - (container.clientWidth/2);
+		object.position.y = Math.random() * container.clientHeight - (container.clientHeight/2);
 		object.position.z = Math.random() * 800 - 400;
 		object.rotation.x = Math.random() * 2 * Math.PI;
 		object.rotation.y = Math.random() * 2 * Math.PI;
@@ -51,6 +43,18 @@ function init() {
 	renderer.setSize( container.clientWidth, container.clientHeight );
 	
 	container.appendChild( renderer.domElement );
+
+};
+
+function reposition() {
+	for(i=0; i < scene.children.length; i++){
+     	object = scene.children[i];
+     	object.position.x = Math.random() * container.clientWidth - (container.clientWidth/2);
+		object.position.y = Math.random() * container.clientHeight - (container.clientHeight/2);
+  	}
+
+  	camera.aspect = container.clientWidth / container.clientHeight;
+  	renderer.setSize( container.clientWidth, container.clientHeight );
 
 };
 
@@ -74,3 +78,27 @@ function render() {
 	renderer.render( scene, camera );
 
 };
+
+$(document).foundation();
+$('body').DictIt();
+
+
+$(document).ready(function(){
+  $('.zoom').zoom();
+});
+
+if($('.hero').length > 0) {
+	var container, scene, camera, renderer;
+	var radius = 100, theta = 0;
+
+	init();
+	animate();
+
+	$(window).resize(function() {
+	    delay(function(){
+	      	reposition();
+			
+	    }, 500);
+	});
+
+}
