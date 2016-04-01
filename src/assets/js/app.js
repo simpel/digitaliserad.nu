@@ -1,13 +1,18 @@
 $(document).foundation();
 $('body').DictIt();
 
-var container, scene, camera, renderer;
 
-var radius = 100, theta = 0;
+$(document).ready(function(){
+  $('.zoom').zoom();
+});
 
+if($('.hero').length > 0) {
+	var container, scene, camera, renderer;
+	var radius = 100, theta = 0;
 
-init();
-animate();
+	init();
+	animate();
+}
 
 function init() {
 

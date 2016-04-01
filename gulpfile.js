@@ -5,11 +5,10 @@ var gulp     = require('gulp');
 var panini   = require('panini');
 var rimraf   = require('rimraf');
 var sequence = require('run-sequence');
-var sherpa   = require('style-sherpa');
 var rename   = require('gulp-rename');
 
 // Check for --production flag
-var isProduction = !!(argv.production);
+var isProduction = true;
 
 // Port to use for the development server.
 var PORT = 8000;
@@ -39,6 +38,7 @@ var PATHS = {
     'src/assets/js/hightlight/jquery.highlight.js',
     'src/assets/js/dictIt/dictIt.js',
     'src/assets/js/three.min.js',
+    'src/assets/js/jquery.zoom.min.js',
     'src/assets/js/app.js'
   ]
 };
@@ -55,6 +55,7 @@ gulp.task('copy', function() {
   gulp.src(PATHS.assets).pipe(gulp.dest('dist/assets'));
   gulp.src('src/data/CNAME').pipe(gulp.dest('dist'));
   gulp.src('src/data/sitemap.xml').pipe(gulp.dest('dist'));
+  gulp.src('src/data/jquery.min.map').pipe(gulp.dest('dist/assets/js'));
 });
 
 // Copy page templates into finished HTML files
@@ -76,12 +77,6 @@ gulp.task('pages:reset', function(cb) {
   cb();
 });
 
-gulp.task('styleguide', function(cb) {
-  sherpa('src/styleguide/index.md', {
-    output: 'dist/styleguide.html',
-    template: 'src/styleguide/template.html'
-  }, cb);
-});
 
 // Compile Sass into CSS
 // In production, the CSS is compressed
@@ -141,7 +136,7 @@ gulp.task('images', function() {
 
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build', function(done) {
-  sequence('clean', ['pages', 'sass', 'javascript', 'images', 'copy'], 'styleguide', done);
+  sequence('clean', ['pages', 'sass', 'javascript', 'images', 'copy'], done);
 });
 
 // Start a server with LiveReload to preview the site in
@@ -161,5 +156,4 @@ gulp.task('default', ['build', 'server'], function() {
   gulp.watch(['src/assets/scss/**/*.scss'], ['sass', browser.reload]);
   gulp.watch(['src/assets/js/**/*.js'], ['javascript', browser.reload]);
   gulp.watch(['src/assets/img/**/*'], ['images', browser.reload]);
-  gulp.watch(['src/styleguide/**'], ['styleguide', browser.reload]);
 });

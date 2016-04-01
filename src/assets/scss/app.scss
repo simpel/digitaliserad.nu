@@ -74,18 +74,11 @@ body {
         color: $white;
     } 
 
-    small {
-        color: $light-gray;
-        text-transform: uppercase;
-        font-family: $label-font-family;
-        font-weight: normal;
-        font-size: 60%;
-        line-height: 1.6;
-        display: block;
-        margin-top: 5px;
 
+}
 
-    }
+.small {
+    font-size: 60%;
 }
 
 a:hover, a.active {
@@ -150,6 +143,7 @@ ul li.header {
     position: relative;
 }
 
+/* uncss:ignore */
 canvas { 
     top: 0;
     right: 0;
@@ -277,24 +271,21 @@ section {
 }
 
 
-
+/* uncss:ignore */
 .alternate section:nth-child(even) {
     background-color: #f8f8f8;
+}
 
-    .media-object {
+/* uncss:ignore */
+.alternate section:nth-child(even) .media-object {
     @include clearfix;
-
-    .media-object-section:first-child {
-        float: right;
-        padding-left: $global-padding;
-        padding-right: 0;
-    }
-
 }
-   
-
+/* uncss:ignore */
+.alternate section:nth-child(even) .media-object .media-object-section:first-child {
+    float: right;
+    padding-left: $global-padding;
+    padding-right: 0;
 }
-
 
 table.contact {
     font-size: 140%;
