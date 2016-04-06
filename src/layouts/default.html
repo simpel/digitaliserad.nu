@@ -13,7 +13,17 @@
     <meta name="description" content="{{description}}" />
 
 
-<meta property="og:url"                content="http://www.digitaliserad.nu" />
+{{#ifpage 'index'}}
+ <meta property="og:url"                content="http://www.digitaliserad.nu" />
+{{/ifpage}}
+
+{{#unlesspage 'index'}}
+  <meta property="og:url"                content="http://www.digitaliserad.nu/{{page}}.html" />
+{{/unlesspage}}
+
+
+
+
 <meta property="og:locale"             content="sv_SE" />
 <meta property="og:title"              content="{{title}}" />
 <meta property="og:description"        content="{{description}}" />
