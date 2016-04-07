@@ -91,6 +91,16 @@ a:hover, a.active {
     text-decoration: underline;
 }
 
+
+
+a.blockhover:hover {
+    text-decoration: none;
+
+    h1, h3, h3 {
+        text-decoration: underline;
+    }
+}
+
 h4, h5, h6 {
     font-weight: normal;
 }
