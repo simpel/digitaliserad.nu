@@ -6,6 +6,7 @@ var panini   = require('panini');
 var rimraf   = require('rimraf');
 var sequence = require('run-sequence');
 var rename   = require('gulp-rename');
+var sitemap = require('gulp-sitemap');
 
 // Check for --production flag
 var isProduction = false;
@@ -54,7 +55,8 @@ gulp.task('clean', function(done) {
 gulp.task('copy', function() {
   gulp.src(PATHS.assets).pipe(gulp.dest('dist/assets'));
   gulp.src('src/data/CNAME').pipe(gulp.dest('dist'));
-  gulp.src('src/data/sitemap.xml').pipe(gulp.dest('dist'));
+  //gulp.src('src/data/sitemap.xml').pipe(gulp.dest('dist'));
+  gulp.src('src/data/robots.txt').pipe(gulp.dest('dist'));
   gulp.src('src/data/jquery.min.map').pipe(gulp.dest('dist/assets/js'));
 });
 
@@ -69,6 +71,13 @@ gulp.task('pages', function() {
       helpers: 'src/helpers/'
     }))
     .pipe(gulp.dest('dist'));
+
+  gulp.src('src/pages/**/*.{html,hbs,handlebars}')
+    .pipe(sitemap({
+      siteUrl: 'http://www.digitaliserad.nu'
+    }))
+    .pipe(gulp.dest('dist'));
+    
 });
 
 gulp.task('pages:reset', function(cb) {
@@ -134,9 +143,11 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/assets/img'));
 });
 
+
 // Build the "dist" folder by running all of the above tasks
 gulp.task('build', function(done) {
   sequence('clean', ['pages', 'sass', 'javascript', 'images', 'copy'], done);
+
 });
 
 // Start a server with LiveReload to preview the site in
@@ -147,6 +158,8 @@ gulp.task('server', ['build'], function() {
 
   });
 });
+
+
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default', ['build', 'server'], function() {
