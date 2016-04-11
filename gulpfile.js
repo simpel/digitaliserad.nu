@@ -8,7 +8,7 @@ var sequence = require('run-sequence');
 var rename   = require('gulp-rename');
 
 // Check for --production flag
-var isProduction = true;
+var isProduction = false;
 
 // Port to use for the development server.
 var PORT = 8000;

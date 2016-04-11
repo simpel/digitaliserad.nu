@@ -6,7 +6,7 @@
 @import 'settings';
 
 @include foundation-global-styles;
-@include foundation-grid;
+// @include foundation-grid;
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 @include foundation-typography;
@@ -90,6 +90,39 @@ body {
 a:hover, a.active {
     text-decoration: underline;
 }
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    .menu.border {
+        border-bottom: 1px solid lighten($primary-color, 60%);
+        margin-bottom: $global-margin;
+        padding-bottom: $global-margin;
+
+        > li > a {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        
+    }    
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+    .menu.border {
+        border-right: 1px solid lighten($primary-color, 60%);
+        
+        
+
+        a.active {
+            border-right: 3px solid lighten($primary-color, 60%);
+        }
+    }
+}
+
+
+
 
 
 
