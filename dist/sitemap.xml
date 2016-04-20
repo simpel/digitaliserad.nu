@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+        <loc>http://www.digitaliserad.nu/digitalisering.html</loc>
+        <lastmod>2016-04-15T05:56:55.000Z</lastmod>
+    </url>
+    <url>
         <loc>http://www.digitaliserad.nu/effektkartor.html</loc>
         <lastmod>2016-04-11T07:01:49.000Z</lastmod>
     </url>
     <url>
         <loc>http://www.digitaliserad.nu/</loc>
-        <lastmod>2016-04-11T07:42:15.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://www.digitaliserad.nu/kontakt.html</loc>
-        <lastmod>2016-04-12T06:12:54.000Z</lastmod>
+        <lastmod>2016-04-20T07:31:57.000Z</lastmod>
     </url>
     <url>
         <loc>http://www.digitaliserad.nu/kundresor.html</loc>
@@ -21,11 +21,15 @@
         <lastmod>2016-04-11T07:01:48.000Z</lastmod>
     </url>
     <url>
+        <loc>http://www.digitaliserad.nu/om.html</loc>
+        <lastmod>2016-04-20T08:04:04.000Z</lastmod>
+    </url>
+    <url>
         <loc>http://www.digitaliserad.nu/playbook.html</loc>
         <lastmod>2016-04-11T07:01:48.000Z</lastmod>
     </url>
     <url>
         <loc>http://www.digitaliserad.nu/toolbox.html</loc>
-        <lastmod>2016-04-11T09:23:39.000Z</lastmod>
+        <lastmod>2016-04-20T08:04:41.000Z</lastmod>
     </url>
 </urlset>
