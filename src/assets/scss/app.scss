@@ -200,18 +200,41 @@ canvas {
     opacity: 0.2;
 }
 
+.bar {
+    background: $primary-color;
+    padding: 0.5em 0;
+    color: lighten($primary-color, 60%);
+
+    a {
+        color: $topbar-link-color;
+    }
+
+   
+
+}
+
+
+
+
+.mainmenu {
+    display: none;
+
+    a {
+        
+        padding: 1em 0;
+        display: block;
+       
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
 section {
     padding: 2em 0;
 
-    &.bar {
-        background: $primary-color;
-        color: lighten($primary-color, 60%);
-        padding: 1em 0;
 
-        a {
-            color: #FFF;
-        }
-    }
 
     &.hero {
         background: $secondary-color;

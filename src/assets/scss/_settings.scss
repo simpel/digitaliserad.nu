@@ -520,8 +520,8 @@ $thumbnail-radius: $global-radius;
 // -------------
 
 $titlebar-background: $white;
-$titlebar-color: $dark-gray;
-$titlebar-padding: 0.5rem;
+$titlebar-color: $white;
+$titlebar-padding: 1rem;
 $titlebar-text-font-weight: normal;
 $titlebar-icon-color: $dark-gray;
 $titlebar-icon-color-hover: $medium-gray;
@@ -543,6 +543,6 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: none;
-$topbar-link-color: $primary-color;
+$topbar-background: $primary-color;
+$topbar-link-color: $white;
 $topbar-input-width: 200px;
