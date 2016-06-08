@@ -213,22 +213,19 @@ canvas {
 
 }
 
-
+.hide {
+    display: none;
+}
 
 
 .headermenu {
-    display: none;
+
 
     a {
-        
         padding: 1em 0;
         display: block;
-       
     }
 
-    &.show {
-        display: inline;
-    }
 }
 
 section {

@@ -80,7 +80,7 @@ function render() {
 };
 
 $(document).foundation();
-$('body').DictIt();
+//$('body').DictIt();
 
 
 $(document).ready(function(){
