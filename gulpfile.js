@@ -6,7 +6,7 @@ var panini   = require('panini');
 var rimraf   = require('rimraf');
 var sequence = require('run-sequence');
 var rename   = require('gulp-rename');
-var sitemap = require('gulp-sitemap');
+var sitemap  = require('gulp-sitemap');
 
 // Check for --production flag
 var isProduction = true;
