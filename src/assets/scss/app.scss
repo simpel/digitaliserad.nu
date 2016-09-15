@@ -269,17 +269,7 @@ section {
     &.page_header {
         background: lighten($primary-color, 60%);
         color: $primary-color;
-        
-        @media screen and (min-width: 40em) {
-            .two_columns {
-                -webkit-columns: 2;
-                /* Chrome, Safari, Opera */
-                -moz-columns: 2;
-                /* Firefox */
-                columns: 2;
-            }
-        }
-        
+                
         li {
             color: #FFF;
             a {
@@ -296,6 +286,26 @@ section {
         background: #BD4932;
         color: #FFF;
     }
+
+    @media screen and (min-width: 40em) {
+            .two_columns {
+                -webkit-columns: 2;
+                /* Chrome, Safari, Opera */
+                -moz-columns: 2;
+                /* Firefox */
+                columns: 2;
+            }
+        }
+
+    @media screen and (min-width: 40em) {
+            .three_columns {
+                -webkit-columns: 3;
+                /* Chrome, Safari, Opera */
+                -moz-columns: 3;
+                /* Firefox */
+                columns: 3;
+            }
+        }
 
 }
 
@@ -382,7 +392,15 @@ table.contact {
 }
 
 
+.image-left {
+    float: left;
+    padding: 0 $global-padding $global-padding 0;   
+}
 
+.image-right {
+    float: right;
+    padding: 0 0 $global-padding $global-padding ;   
+}
 
 .footer {
     background: $dark-gray;
