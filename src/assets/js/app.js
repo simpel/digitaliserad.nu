@@ -101,4 +101,6 @@ if($('.hero').length > 0) {
 	    }, 500);
 	});
 
+	console.log('testing');
+
 }
