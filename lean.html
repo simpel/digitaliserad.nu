@@ -286,44 +286,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <script language="JavaScript">
     <!--
-    function CorrectEmailaddress(SubscriberForm){
-     if (SubscriberForm.pf_Email.value.length > 255)
-    {
-    alert("Ange högst 255 tecken i fältet för e-postadress.");
-    SubscriberForm.pf_Email.focus();
-    return false;
-     }
-    if (SubscriberForm.pf_Email.value == "")
-    {
-    alert("Ange adressen i fältet för e-postadress");
-    SubscriberForm.pf_Email.focus();
-    return false; }
-    if (SubscriberForm.pf_Email.value.length < 7)
-    {
-    alert("Ange minst 7 tecken i fältet för e-postadress.");
-    SubscriberForm.pf_Email.focus();
-    return false; }
-    pf_Email=SubscriberForm.pf_Email.value;
-    var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,})$/;
-    if(reg.test(pf_Email) == false) 
-    {
-          alert('E-postadressen är inte giltig. Vänligen försök igen.');
-          SubscriberForm.pf_Email.focus();
-          return false;
+    function CorrectEmailaddress(SubscriberForm){ 
+        if (SubscriberForm.pf_Email.value.length > 255) { 
+            alert("Ange högst 255 tecken i fältet för e-postadress."); 
+            SubscriberForm.pf_Email.focus(); 
+            return false; 
+        } 
+    
+        if (SubscriberForm.pf_Email.value == "") { 
+            alert("Ange adressen i fältet för e-postadress"); 
+            SubscriberForm.pf_Email.focus(); 
+            return false;
+        } 
+    
+        if (SubscriberForm.pf_Email.value.length < 7) { 
+            alert( "Ange minst 7 tecken i fältet för e-postadress."); 
+            SubscriberForm.pf_Email.focus(); 
+            return false; 
+        } 
+    
+        pf_Email=SubscriberForm.pf_Email.value; 
+    
+        var reg=/ ^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,})$/; 
+    
+        if(reg.test(pf_Email)==false) { 
+            alert( 'E-postadressen är inte giltig. Vänligen försök igen.'); 
+            SubscriberForm.pf_Email.focus(); 
+            return false; 
+        } 
+    
+        var counter=0 ; 
+    
+        for (i=1; i<=SubscriberForm.pf_CounterMailinglists.value; i++) { 
+            var checkBoxName="pf_MailinglistName" + i; 
+    
+            if (document.getElementsByName(checkBoxName)[0].checked || document.getElementsByName(checkBoxName)[0].type=="hidden" ) counter++; 
+        } 
+            
+        if (counter==0 ) { 
+            alert( "En eller flera e-postlistor krävs för detta formulär."); return false; 
+        } 
+    
+    
+        ga('send', 'event', 'newsletter', 'signup');
+        return true; 
     }
-    var counter = 0;
-    for (i=1; i<=SubscriberForm.pf_CounterMailinglists.value; i++)
-     {
-    var checkBoxName = "pf_MailinglistName" + i;
-     if (document.getElementsByName(checkBoxName)[0].checked || document.getElementsByName(checkBoxName)[0].type == "hidden") counter++; 
-    }
-     if (counter == 0)
-    {
-    alert("En eller flera e-postlistor krävs för detta formulär.");
-    return false;
-     }
-    return true;
-    }
+    
     //-->
     </script>
     
