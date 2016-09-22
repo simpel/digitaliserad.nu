@@ -87,9 +87,7 @@ $(document).ready(function(){
   $('.zoom').zoom();
 });
 
-$(document).on("formvalid.zf.abide", function(ev,frm) {
-    console.log("Form id "+frm.attr('id')+" is valid");  
-})
+
 
 if($('.hero').length > 0) {
 	var container, scene, camera, renderer;
