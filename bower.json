@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "foundation-sites": "~6.2",
-    "motion-ui": "~1.1.0"
+    "motion-ui": "~1.1.0",
+    "jquery": "~2.2.4",
+    "jquery-zoom": "~1.7.18"
   },
   "private": true
 }

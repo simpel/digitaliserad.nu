@@ -35,6 +35,7 @@
 
 
 
+
 </head>
 
 <body>
@@ -106,11 +107,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "name": "Digitaliserad.nu",
   "url": "http://www.digitaliserad.nu"
 }
- </script>
+</script>
+<script src="assets/js/vendors.js"></script>
+<script src="assets/js/app.js"></script>
 
 
+{{#if localscript}}
+  <script src="{{localscript}}"></script>
+{{/if}}
 
 
 </body>
-
 </html>
