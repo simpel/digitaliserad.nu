@@ -3,3 +3,7 @@ $(document).ready(function(){
 });
 
 $(document).foundation();
+
+WebFont.load({
+	google: { families: ['Raleway:400,700']}
+});
