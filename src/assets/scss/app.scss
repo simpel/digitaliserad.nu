@@ -309,6 +309,26 @@ section {
 
 }
 
+
+.is-invalid-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    $alert-color;
+        }
+        
+        .is-invalid-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    $alert-color;
+            opacity:  1;
+        }
+        
+        .is-invalid-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    $alert-color;
+            opacity:  1;
+        }
+        
+        .is-invalid-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:    $alert-color;
+        }
+
+
 .helpme {
     position: relative;
 
