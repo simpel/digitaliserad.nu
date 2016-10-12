@@ -6,7 +6,7 @@
 @import 'settings';
 
 @include foundation-global-styles;
-// @include foundation-grid;
+@include foundation-grid;
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 @include foundation-typography;
@@ -46,20 +46,72 @@
 @include motion-ui-animations;
 
 @import 'components/foundation-icons';
+@import 'components/mixins';
 
 
 body {
     background: $white;
 }
 
-.separator {
-   
-    margin: 0 $global-margin;
-
-    &.border {
-        border-left: 1px solid rgba($white, 1);
-    }
+.top-bar-container {
+    @include box-shadow(0,0,5px, #000);
+    width: 100%;
+    background: #fff;
+    margin-top: 0;
 }
+
+.top-bar {
+
+    padding: 0;
+
+
+    a.logo {
+        background: no-repeat url("../img/icon.png") left center;
+        padding-left: 29px !important;
+        padding-right: 5px !important;
+        display: inline-block !important;
+        border-top: 4px solid #fff; 
+        border-bottom: 4px solid #fff; 
+    }
+
+    .external {
+        margin-top: 0.6em;
+        color: #555;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    .menu {
+        &.hover {
+            a {
+                color: #000;
+                border-top: 4px solid #fff; 
+                border-bottom: 4px solid #fff; 
+                padding-left: 0px;
+                padding-right: 0px;
+                margin: auto 1em;
+
+                &:hover, &:active, &.active {
+                    color: $primary-color;
+                    border-top: 4px solid #fff; 
+                    border-bottom: 4px solid $primary-color; 
+                    text-decoration: none;
+                }
+            }
+            
+        }
+    }
+
+
+}
+
+
+
+
+
+
 
 .main {
     
@@ -81,6 +133,10 @@ body {
 
 .small {
     font-size: 60%;
+}
+
+.nomargin {
+    margin: 0 !important;
 }
 
 .margin-bottom {
@@ -200,18 +256,7 @@ canvas {
     opacity: 0.2;
 }
 
-.bar {
-    background: $primary-color;
-    padding: 0.5em 0;
-    color: lighten($primary-color, 60%);
 
-    a {
-        color: $topbar-link-color;
-    }
-
-   
-
-}
 
 .hide {
     display: none;
@@ -234,18 +279,24 @@ section {
 
 
     &.hero {
-        background: $secondary-color;
+        
         padding: 4em 0 4em 0;
+        background: #f8f8f8 url('../img/hero_bg.png') center center;
+        @include box-shadow(0,0,20px, rgba(0,0,0,0.2), true);
+       
         
         h1 {
             text-align: center;
             margin-bottom: 0.5em;
+            color: $primary-color;
         }
 
-        h2 {
+        .lead {
             font-weight: normal;
             text-align: center;
             margin-bottom: 0;
+            color: $primary-color;
+            
         }
 
         &.error {
@@ -283,8 +334,53 @@ section {
     }
 
     &.newsletter {
-        background: #dedede;
-        color: #000;
+        background: $secondary-color;
+        color: #FFF;
+            
+        h2 {
+            font-weight: normal;
+            font-size: $global-font-size;
+            margin-bottom: 1em;
+        }
+
+        .button {
+            background: lighten($secondary-color, 10%);
+        }
+
+        a {
+            color: lighten($secondary-color, 50%);
+            text-decoration: underline;
+        }
+
+        .is-invalid-input:not(:focus){
+            background-color: #672929;
+            border-color: darken(#672929, 15%);
+            color: $white;
+        }
+        .is-invalid-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    $white;
+        }
+        
+        .is-invalid-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    $white;
+            opacity:  1;
+        }
+        
+        .is-invalid-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    $white;
+            opacity:  1;
+        }
+        
+        .is-invalid-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:    $white;
+        }
+
+
+        .callout {
+            background-color: lighten($secondary-color, 10%);
+            border-color: lighten($secondary-color, 10%);
+            color: $white;
+        }
     }
 
     @media screen and (min-width: 40em) {
@@ -310,23 +406,7 @@ section {
 }
 
 
-.is-invalid-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-            color:    $alert-color;
-        }
-        
-        .is-invalid-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-            color:    $alert-color;
-            opacity:  1;
-        }
-        
-        .is-invalid-input::-moz-placeholder { /* Mozilla Firefox 19+ */
-            color:    $alert-color;
-            opacity:  1;
-        }
-        
-        .is-invalid-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color:    $alert-color;
-        }
+
 
 
 .helpme {
