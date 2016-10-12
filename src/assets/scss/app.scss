@@ -318,13 +318,14 @@ section {
     }
 
     &.page_header {
-        background: lighten($primary-color, 60%);
-        color: $primary-color;
+        background: lighten($primary-color, 0%);
+        color: $white;
                 
         li {
-            color: #FFF;
+            color: $white;
             a {
             font-weight: normal;
+            color: $white;
         }
         }
         a {
