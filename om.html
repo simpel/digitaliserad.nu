@@ -50,25 +50,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="large-10 columns">
 
       <div class="top-bar">
-        <div class="top-bar-left">
+        <div class="top-bar-left" style="width: auto;">
           <ul class="menu">
             <li><a href="/" class="logo">Digitaliserad.nu</a> <span class="small external show-for-medium">en sida från <a href="http://www.regionhalland.se">Region Halland</a></span></li>
             
           </ul>
         </div>
-        <div class="top-bar-right show-for-medium">
-          <ul class="menu hover">
+        <div class="top-bar-right" style="width: auto;">
+          <ul class="menu hover show-for-medium">
             <li><a href="/playbook.html" >Spelboken</a></li>
             <li><a href="/metoder.html" >Metoder</a></li>
             <li><a href="/toolbox.html" >Verktyg</a></li>
             <li><a href="/om.html" class="active">Kontakta oss</a></li>
           </ul>
+
+
+          <button type="button" class="button fi-list hide-for-medium nomargin" data-toggle="mobilemenu"></button>
+
         </div>
       </div>
+
+      <ul class="menu vertical hover hide-for-medium hide" id="mobilemenu" data-toggler="hide">
+        <li><a href="/playbook.html" >Spelboken</a></li>
+        <li><a href="/metoder.html" >Metoder</a></li>
+        <li><a href="/toolbox.html" >Verktyg</a></li>
+        <li><a href="/om.html" class="active">Kontakta oss</a></li>
+      </ul>
+
+
     </div>
   </div>
 </div>
-
 
 
 
