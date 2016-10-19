@@ -6,7 +6,7 @@
 @import 'settings';
 
 @include foundation-global-styles;
-@include foundation-grid;
+//@include foundation-grid;
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 @include foundation-typography;
@@ -63,9 +63,7 @@ body {
     background: #fff;
     margin-top: 0;
 
-    .columns {
-        padding: 0;
-    }
+    
     
     button {
 
@@ -85,6 +83,14 @@ body {
             padding-left: 29px !important;
             padding-right: 5px !important;
             display: inline-block !important; 
+            border-top: 4px solid #FFF;
+        }
+
+        @media screen and (max-width: 39.9375em) {
+
+            a.logo {
+                border-top: none;
+            }
         }
 
         .external {
@@ -124,16 +130,21 @@ body {
 
     a {
         color: #000;
-        border-left: 4px solid #fff; 
         padding: 1em 1em 1em 0;
         margin: 0;
         text-align: right;
 
-        &:hover, &:active, &.active {
+        &:hover {
+            color: $primary-color;
+            text-decoration: underline;
+            
+        }
+
+        &.active {
+            font-weight: bold;
             color: $primary-color;
             text-decoration: none;
-            border-left: 4px solid $primary-color; 
-            padding: 1em 1em 1em 0;
+            
         }
     }
 }
