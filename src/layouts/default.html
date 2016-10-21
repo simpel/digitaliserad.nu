@@ -88,9 +88,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
   </div>
 </div>
+{{#unlesspage 'index'}}
 
 
+<section class="bc">
+ <div class="row align-center">
+                <div class="large-10  columns">
+   <nav aria-label="Du är här:" role="navigation">
+  <ul class="breadcrumbs">
 
+    {{#each bc}}
+      <li><a href="{{@key}}">{{this}}</a></li>
+    {{/each}}
+    <li>
+      <span class="show-for-sr">Aktuell sida: </span> {{title}}
+    </li>
+
+  </ul>
+</nav>
+</div>
+</div>
+</section>
+
+{{/unlesspage}}
           
     {{> body}}
     {{> newsletter}}

@@ -115,7 +115,7 @@ body {
                     &:hover, &:active, &.active {
                         color: $primary-color;
                         border-top: 4px solid #fff; 
-                        border-bottom: 4px solid $primary-color; 
+                        border-bottom: 4px solid darken($primary-color, 5%); 
                         text-decoration: none;
                     }
                 }       
@@ -135,14 +135,14 @@ body {
         text-align: right;
 
         &:hover {
-            color: $primary-color;
+            color: darken($primary-color, 5%);
             text-decoration: underline;
             
         }
 
         &.active {
             font-weight: bold;
-            color: $primary-color;
+            color: darken($primary-color, 5%);
             text-decoration: none;
             
         }
@@ -317,7 +317,15 @@ canvas {
 section {
     padding: 2em 0;
 
+    &.bc {
+        padding: 0.5em 0;
+        margin: 0;
+        background: darken($primary-color, 5%);
 
+        .breadcrumbs {
+            color: $white;
+        }
+    }
 
     &.hero {
         
@@ -371,6 +379,7 @@ section {
         }
         a {
             font-weight: bold;
+            color: $white;
         }
  
     }
