@@ -9,7 +9,7 @@ var rename   = require('gulp-rename');
 var sitemap  = require('gulp-sitemap');
 
 // Check for --production flag
-var isProduction = false;
+var isProduction = true;
 
 // Port to use for the development server.
 var PORT = 8000;
