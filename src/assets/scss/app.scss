@@ -188,6 +188,15 @@ a:hover, a.active {
     text-decoration: underline;
 }
 
+.alternate p a,
+.alternate li a {
+    font-weight: bold;
+}
+
+.alternate p a.button {
+    font-weight: normal;
+}
+
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
