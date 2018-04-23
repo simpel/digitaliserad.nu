@@ -2,6 +2,7 @@
 
 var glob = require('glob');
 var path = require('path');
+var fs = require('fs');
 
 /**
  * Load a set of files
