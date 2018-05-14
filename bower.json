@@ -2,7 +2,7 @@
   "name": "digitaliserad.nu",
   "version": "1.0.0",
   "authors": [
-    "Joel Sandén <joel.sanden@regionahalland.se>"
+    "Joel Sandén <joel.sanden@regionhalland.se>"
   ],
   "description": "Digital Guidelines and best practices for a digitalized workspace",
   "main": "gulpfile.js",
