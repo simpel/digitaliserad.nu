@@ -63,8 +63,8 @@ body {
     background: #fff;
     margin-top: 0;
 
-    
-    
+
+
     button {
 
         margin: 0;
@@ -82,7 +82,7 @@ body {
             background: no-repeat url("../img/icon.png") left center;
             padding-left: 29px !important;
             padding-right: 5px !important;
-            display: inline-block !important; 
+            display: inline-block !important;
             border-top: 4px solid #FFF;
         }
 
@@ -106,19 +106,19 @@ body {
             &.hover {
                 a {
                     color: #000;
-                    border-top: 4px solid #fff; 
-                    border-bottom: 4px solid #fff; 
+                    border-top: 4px solid #fff;
+                    border-bottom: 4px solid #fff;
                     padding-left: 0px;
                     padding-right: 0px;
                     margin: auto 1em;
 
                     &:hover, &:active, &.active {
                         color: $primary-color;
-                        border-top: 4px solid #fff; 
-                        border-bottom: 4px solid darken($primary-color, 5%); 
+                        border-top: 4px solid #fff;
+                        border-bottom: 4px solid darken($primary-color, 5%);
                         text-decoration: none;
                     }
-                }       
+                }
             }
         }
     }
@@ -137,14 +137,14 @@ body {
         &:hover {
             color: darken($primary-color, 5%);
             text-decoration: underline;
-            
+
         }
 
         &.active {
             font-weight: bold;
             color: darken($primary-color, 5%);
             text-decoration: none;
-            
+
         }
     }
 }
@@ -155,7 +155,7 @@ body {
 
 
 .main {
-    
+
     li {
         border-bottom: 1px solid $dark-gray;
     }
@@ -167,7 +167,7 @@ body {
         text-decoration: none;
         background: $dark-gray;
         color: $white;
-    } 
+    }
 
 
 }
@@ -201,7 +201,7 @@ a:hover, a.active {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
     .menu.border {
-        
+
         margin-bottom: $global-margin;
         padding-bottom: $global-margin;
 
@@ -209,8 +209,8 @@ a:hover, a.active {
             padding-left: 0;
             padding-right: 0;
         }
-        
-    }    
+
+    }
 
 }
 
@@ -218,7 +218,7 @@ a:hover, a.active {
 @media screen and (min-width: 40em) {
     .menu.border {
         border-right: 1px solid lighten($primary-color, 60%);
-        
+
         a.active {
             border-right: 3px solid lighten($primary-color, 60%);
         }
@@ -249,7 +249,7 @@ h6 {
 
 .checklist {
     list-style-type: none;
-    
+
     li {
     	position: relative;
     }
@@ -295,7 +295,7 @@ ul li.header {
 }
 
 /* uncss:ignore */
-canvas { 
+canvas {
     top: 0;
     right: 0;
     bottom: 0;
@@ -335,12 +335,12 @@ section {
     }
 
     &.hero {
-        
+
         padding: 4em 0 4em 0;
         background: #f8f8f8 url('../img/hero_bg.png') center center;
         @include box-shadow(0,0,20px, rgba(0,0,0,0.2), true);
-       
-        
+
+
         h1 {
             text-align: center;
             margin-bottom: 0.5em;
@@ -352,31 +352,41 @@ section {
             text-align: center;
             margin-bottom: 0;
             color: $primary-color;
-            
+
         }
 
         &.error {
             background: $alert-color;
             color: $white;
 
+            h1,p {
+                color: white;
+            }
+
+
             a, a:active, a:visited {
-                color: darken($alert-color, 30%);
+                color: lighten($alert-color, 30%);
+                text-decoration: underline;
+            }
+
+            a:hover {
+                color: white;
             }
         }
     }
 
     &.subhero {
         background: #FFF;
-        
+
         padding: 2em 0;
 
-        
+
     }
 
     &.page_header {
         background: lighten($primary-color, 0%);
         color: $white;
-                
+
         li {
             color: $white;
             a {
@@ -388,13 +398,13 @@ section {
             font-weight: bold;
             color: $white;
         }
- 
+
     }
 
     &.newsletter {
         background: $secondary-color;
         color: #FFF;
-            
+
         h2 {
             font-weight: normal;
             font-size: $global-font-size;
@@ -418,17 +428,17 @@ section {
         .is-invalid-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
             color:    $white;
         }
-        
+
         .is-invalid-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
             color:    $white;
             opacity:  1;
         }
-        
+
         .is-invalid-input::-moz-placeholder { /* Mozilla Firefox 19+ */
             color:    $white;
             opacity:  1;
         }
-        
+
         .is-invalid-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
             color:    $white;
         }
@@ -497,12 +507,12 @@ section {
 @media screen and (max-width: 39.9375em) {
     .media-object {
         @include clearfix;
-        
-        .media-object-section  {        
+
+        .media-object-section  {
             display: inline;
         }
-        
-        .media-object-section:first-child  {        
+
+        .media-object-section:first-child  {
             display: inline;
             float: left;
         }
@@ -552,12 +562,12 @@ table.contact {
 
 .image-left {
     float: left;
-    padding: 0 $global-padding $global-padding 0;   
+    padding: 0 $global-padding $global-padding 0;
 }
 
 .image-right {
     float: right;
-    padding: 0 0 $global-padding $global-padding ;   
+    padding: 0 0 $global-padding $global-padding ;
 }
 
 .footer {
