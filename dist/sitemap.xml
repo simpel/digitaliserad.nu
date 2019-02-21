@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+        <loc>http://www.digitaliserad.nu/cookies.html</loc>
+        <lastmod>2019-02-21T07:36:50.252Z</lastmod>
+    </url>
+    <url>
         <loc>http://www.digitaliserad.nu/digitalisering.html</loc>
         <lastmod>2018-04-19T13:01:55.089Z</lastmod>
     </url>
@@ -11,6 +15,10 @@
     <url>
         <loc>http://www.digitaliserad.nu/</loc>
         <lastmod>2018-04-23T09:05:03.000Z</lastmod>
+    </url>
+    <url>
+        <loc>http://www.digitaliserad.nu/integritetsmeddelande.html</loc>
+        <lastmod>2019-02-21T07:40:41.865Z</lastmod>
     </url>
     <url>
         <loc>http://www.digitaliserad.nu/kundresor.html</loc>
